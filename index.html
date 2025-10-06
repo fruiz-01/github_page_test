@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ingeniería Sin Fronteras Chile - Campaña anual de donaciones para proyectos de desarrollo sostenible en comunidades vulnerables">
+    <meta name="keywords" content="ISF Chile, donaciones, ingeniería social, desarrollo sostenible, ONG Chile">
+    <meta property="og:title" content="ISF Chile - Campaña de Donaciones 2025">
+    <meta property="og:description" content="Construyendo un futuro más justo y sostenible para todas las comunidades">
+    <meta property="og:type" content="website">
+    <title>ISF Chile - Campaña Anual de Donaciones 2025</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #2c5aa0;
+            --primary-dark: #1e3a5f;
+            --accent-orange: #ff6b35;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e0e0e0;
+            --text-dark: #333;
+            --text-medium: #555;
+            --text-light: #666;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Header Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: white;
+            padding: 16px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.15em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            border: none;
+            cursor: pointer;
+            animation: fadeInUp 1.2s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.5);
+            background: #ff5722;
+        }
+        
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Secciones */
+        section {
+            padding: 70px 20px;
+        }
+        
+        .section-light {
+            background: var(--light-gray);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.3em;
+            margin-bottom: 50px;
+            color: var(--primary-blue);
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-orange);
+            border-radius: 2px;
+        }
+        
+        /* Impacto Grid */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+        }
+        
+        .impact-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent-orange);
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .impact-number {
+            font-size: 3.5em;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+        
+        .impact-text {
+            font-size: 1.15em;
+            color: var(--text-medium);
+            font-weight: 500;
+        }
+        
+        /* Proyectos */
+        .project-list {
+            margin-top: 40px;
+            display: grid;
+            gap: 25px;
+        }
+        
+        .project-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-blue);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .project-item:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+            transform: translateX(5px);
+        }
+        
+        .project-item h3 {
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            font-size: 1.4em;
+        }
+        
+        .project-item p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Progreso */
+        .progress-section {
+            text-align: center;
+            margin: 50px 0;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.08);
+        }
+        
+        .progress-bar-container {
+            background: var(--medium-gray);
+            height: 45px;
+            border-radius: 25px;
+            overflow: hidden;
+            margin: 30px 0;
+            position: relative;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-orange));
+            height: 100%;
+            width: 68%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 20px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: width 1.5s ease;
+            box-shadow: 0 2px 10px rgba(44, 90, 160, 0.3);
+        }
+        
+        .progress-text {
+            font-size: 1.3em;
+            margin-top: 15px;
+            color: var(--text-dark);
+        }
+        
+        .progress-text strong {
+            color: var(--primary-blue);
+            font-size: 1.4em;
+        }
+        
+        .progress-subtitle {
+            margin-top: 20px;
+            color: var(--text-light);
+            font-size: 1.05em;
+        }
+        
+        /* Niveles de donación */
+        .donation-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .donation-level {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 12px;
+            border: 2px solid var(--medium-gray);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .donation-level::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--primary-blue);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .donation-level:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(44, 90, 160, 0.15);
+        }
+        
+        .donation-level:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .donation-amount {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        .donation-description {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            min-height: 70px;
+            line-height: 1.6;
+        }
+        
+        .donation-level .cta-button {
+            font-size: 1em;
+            padding: 12px 30px;
+        }
+        
+        /* Testimonios */
+        .testimonial {
+            background: white;
+            padding: 35px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent-orange);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial:hover {
+            box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.15em;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            text-align: right;
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+        
+        /* Footer CTA */
+        .footer-cta {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .footer-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .footer-cta p {
+            font-size: 1.2em;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer-cta .cta-button {
+            background: white;
+            color: var(--primary-blue);
+        }
+        
+        .footer-cta .cta-button:hover {
+            background: var(--light-gray);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        footer p {
+            margin: 8px 0;
+        }
+        
+        footer a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: #ff8a65;
+            text-decoration: underline;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+            font-size: 1.05em;
+        }
+        
+        .footer-info {
+            margin-top: 20px;
+            font-size: 0.95em;
+            opacity: 0.8;
+        }
+        
+        /* Disclaimer */
+        .tax-disclaimer {
+            text-align: center;
+            margin-top: 35px;
+            padding: 20px;
+            background: rgba(44, 90, 160, 0.05);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .hero p {
+                font-size: 1.1em;
+            }
+            
+            .section-title {
+                font-size: 1.8em;
+            }
+            
+            .impact-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .donation-levels {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 50px 20px;
+            }
+            
+            .progress-section {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 15px;
+            }
+            
+            .hero h1 {
+                font-size: 1.6em;
+            }
+            
+            .cta-button {
+                padding: 14px 35px;
+                font-size: 1em;
+            }
+            
+            .impact-number {
+                font-size: 2.8em;
+            }
+            
+            .donation-amount {
+                font-size: 2.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <h1>🌍 Ingeniería Sin Fronteras Chile</h1>
+                <p>Construyendo un futuro más justo y sostenible para todas las comunidades</p>
+                <a href="#donar" class="cta-button">Donar Ahora</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impacto Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Nuestro Impacto en 2024</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">15</div>
+                    <div class="impact-text">Proyectos Activos</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">2,500+</div>
+                    <div class="impact-text">Personas Beneficiadas</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">8</div>
+                    <div class="impact-text">Regiones de Chile</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos Section -->
+    <section class="section-light">
+        <div class="container">
+            <h2 class="section-title">¿En qué trabajamos?</h2>
+            <div class="project-list">
+                <div class="project-item">
+                    <h3>💧 Agua y Saneamiento</h3>
+                    <p>Implementamos sistemas de agua potable y saneamiento en comunidades rurales, garantizando acceso a este derecho fundamental para mejorar la calidad de vida y salud de las familias.</p>
+                </div>
+                <div class="project-item">
+                    <h3>⚡ Energías Renovables</h3>
+                    <p>Desarrollamos soluciones de energía solar y eólica para comunidades aisladas, promoviendo la autonomía energética y reduciendo la dependencia de fuentes contaminantes.</p>
+                </div>
+                <div class="project-item">
+                    <h3>🏘️ Infraestructura Comunitaria</h3>
+                    <p>Diseñamos y construimos espacios comunitarios, centros educativos y de salud con participación local, fortaleciendo el tejido social y el desarrollo territorial.</p>
+                </div>
+                <div class="project-item">
+                    <h3>📚 Educación Técnica</h3>
+                    <p>Capacitamos a comunidades en mantenimiento de sistemas y tecnologías apropiadas para su desarrollo sostenible, generando capacidades locales permanentes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progreso de la Campaña -->
+    <section>
+        <div class="container">
+            <div class="progress-section">
+                <h2 class="section-title">Progreso de la Campaña 2025</h2>
+                <div class="progress-bar-container">
+                    <div class="progress-bar">68%</div>
+                </div>
+                <p class="progress-text">
+                    <strong>$13.600.000</strong> recaudados de <strong>$20.000.000</strong> meta
+                </p>
+                <p class="progress-subtitle">¡Estamos cada vez más cerca! Tu apoyo nos acerca a nuestra meta anual.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Niveles de Donación -->
+    <section id="donar" class="section-light">
+        <div class="container">
+            <h2 class="section-title">Tu Aporte Hace la Diferencia</h2>
+            <div class="donation-levels">
+                <div class="donation-level">
+                    <div class="donation-amount">$5.000</div>
+                    <div class="donation-description">Apoyas con materiales educativos para talleres comunitarios y formación técnica</div>
+                    <a href="#" class="cta-button">Donar</a>
+                </div>
+                <div class="donation-level">
+                    <div class="donation-amount">$15.000</div>
+                    <div class="donation-description">Financias herramientas para proyectos de construcción comunitaria sostenible</div>
+                    <a href="#" class="cta-button">Donar</a>
+                </div>
+                <div class="donation-level">
+                    <div class="donation-amount">$30.000</div>
+                    <div class="donation-description">Contribuyes a un sistema de purificación de agua para una familia vulnerable</div>
+                    <a href="#" class="cta-button">Donar</a>
+                </div>
+                <div class="donation-level">
+                    <div class="donation-amount">$50.000+</div>
+                    <div class="donation-description">Haces posible proyectos de energía renovable en comunidades aisladas del país</div>
+                    <a href="#" class="cta-button">Donar</a>
+                </div>
+            </div>
+            <div class="tax-disclaimer">
+                ℹ️ Todas las donaciones son deducibles de impuestos según la Ley de Donaciones de Chile
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Voces de Nuestra Comunidad</h2>
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    "Gracias a ISF Chile, nuestra comunidad tiene agua potable por primera vez en 30 años. Nuestros niños ya no se enferman como antes y podemos dedicar más tiempo a la educación y el trabajo."
+                </p>
+                <p class="testimonial-author">— María González, Comunidad Rural de Coquimbo</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    "Los paneles solares han cambiado nuestra forma de vida completamente. Ahora los estudiantes pueden hacer sus tareas con luz por las noches y tenemos refrigeración para conservar alimentos y medicinas."
+                </p>
+                <p class="testimonial-author">— Pedro Martínez, Comunidad Mapuche de La Araucanía</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <div class="footer-cta">
+        <div class="footer-cta-content">
+            <div class="container">
+                <h2>Sé Parte del Cambio</h2>
+                <p>Cada donación, sin importar el monto, nos acerca a comunidades más justas, equitativas y sostenibles en todo Chile</p>
+                <a href="#donar" class="cta-button">Hacer una Donación</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ingeniería Sin Fronteras Chile. Todos los derechos reservados.</p>
+            <p class="footer-links">
+                <a href="#transparencia">Transparencia</a> | 
+                <a href="#contacto">Contacto</a> | 
+                <a href="#redes">Redes Sociales</a>
+            </p>
+            <p class="footer-info">
+                Organización sin fines de lucro dedicada al desarrollo sostenible y la justicia social
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

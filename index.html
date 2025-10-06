@@ -94,6 +94,17 @@
             }
         }
         
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         .cta-button {
             display: inline-block;
             background: var(--accent-orange);
@@ -603,22 +614,22 @@
                 <div class="donation-level">
                     <div class="donation-amount">$5.000</div>
                     <div class="donation-description">Apoyas con materiales educativos para talleres comunitarios y formación técnica</div>
-                    <a href="#" class="cta-button">Donar</a>
+                    <button class="cta-button donation-btn" data-monto="5000">Donar</button>
                 </div>
                 <div class="donation-level">
                     <div class="donation-amount">$15.000</div>
                     <div class="donation-description">Financias herramientas para proyectos de construcción comunitaria sostenible</div>
-                    <a href="#" class="cta-button">Donar</a>
+                    <button class="cta-button donation-btn" data-monto="15000">Donar</button>
                 </div>
                 <div class="donation-level">
                     <div class="donation-amount">$30.000</div>
                     <div class="donation-description">Contribuyes a un sistema de purificación de agua para una familia vulnerable</div>
-                    <a href="#" class="cta-button">Donar</a>
+                    <button class="cta-button donation-btn" data-monto="30000">Donar</button>
                 </div>
                 <div class="donation-level">
                     <div class="donation-amount">$50.000+</div>
                     <div class="donation-description">Haces posible proyectos de energía renovable en comunidades aisladas del país</div>
-                    <a href="#" class="cta-button">Donar</a>
+                    <button class="cta-button donation-btn" data-monto="50000">Donar</button>
                 </div>
             </div>
             <div class="tax-disclaimer">
@@ -671,7 +682,8 @@
             </p>
         </div>
     </footer>
- <!-- Script de tracking de voluntarios -->
-  <script src="script.js"></script>
+    
+    <!-- Script de tracking de voluntarios -->
+    <script src="script.js"></script>
 </body>
 </html>
